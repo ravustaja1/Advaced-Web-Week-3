@@ -16,10 +16,6 @@ app.get('/echo/:id', (req, res) => {
 app.post('/sum', (req, res) => {
     const { numbers } = req.body
 
-    if(!Array.isArray(numbers)) {
-        return res.status(400).json({ error: "Numbers must be an array"})
-    }
-
     const sum = numbers.reduce((acc, num) => acc + num, 0)
     res.json({ sum})
 })
